@@ -19,7 +19,9 @@ def emoji_replacer(input_string):
 
         # If not a valid flag, add the first character as a regional indicator
         char = input_string[i]
-        if char.isalnum():  # Check if the character is an alphabet
+        if char.isnumeric():
+            output_string += f":number_{char}: "
+        elif char.isalnum():  # Check if the character is an alphabet
             output_string += f":regional_indicator_{char}: "
         else:
             # Add the character as it is (e.g., punctuation, numbers, etc.)
